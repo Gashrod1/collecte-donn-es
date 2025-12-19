@@ -1,0 +1,5 @@
+ingestion_data/*
+!ingestion_data/.gitkeep
+__pycache__/
+*.parquet
+venv/
