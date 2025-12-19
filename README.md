@@ -13,8 +13,23 @@ Pour restreindre le risque juridique :
 * `scripts/` : Contient les scripts Python de scraping.
 
 ## Configuration de l'environnement
+### Création de virtual env
 ```bash
-python3 -m venv venv
+python -m venv venv
+```
+### Activation du virtual env
+```bash
+source venv/bin/activate
+```
+ou
+```fish
 source venv/bin/activate.fish
-pip install requests pandas beautifulsoup4 pyarrow
+```
+ou
+```powershell
+venv\Scripts\activate
+```
+### Installation des dépendances
+```bash
+pip install -r requirements.txt
 ```
