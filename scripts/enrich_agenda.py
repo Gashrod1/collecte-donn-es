@@ -4,8 +4,9 @@ import pandas as pd
 import os
 import time
 import glob
+import sys
 
-OUTPUT_DIR = "ingestion_data"
+OUTPUT_DIR = "../ingestion_data"
 
 def get_latest_file():
     # Support both parquet and csv in case parquet failed
@@ -17,7 +18,11 @@ def get_latest_file():
     return max(files, key=os.path.getctime)
 
 def enrich_data():
-    input_file = get_latest_file()
+    if len(sys.argv) > 1:
+        input_file = sys.argv[1]
+    else:
+        input_file = "../ingestion_data/agenda_latest.parquet"
+    
     if not input_file:
         print("No input file found.")
         return
